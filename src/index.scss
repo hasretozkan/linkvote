@@ -1,0 +1,163 @@
+$primary: #ff6000;
+
+$theme-colors: (
+  "primary": $primary,
+);
+
+@import "bootstrap/scss/bootstrap.scss";
+
+.add-button-style {
+  padding-left: 100px;
+  padding-right: 100px;
+  border-radius: 32px;
+}
+
+.bold-font {
+  font-weight: bold;
+}
+
+.set-center-vertical {
+  display: flex;
+  align-items: center;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
+}
+
+.h-logo {
+  width: 191px;
+  height: 34px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.l-logo {
+  font-size: 24px;
+  span {
+    &:first-child {
+      font-weight: 600;
+    }
+
+    &:nth-child(2) {
+      font-style: italic;
+      text-transform: uppercase;
+    }
+  }
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.toast-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  .toast {
+    &.error {
+      background-color: #ffeaea;
+      @extend .border-danger;
+      @extend .text-danger;
+    }
+    &.success {
+      background-color: #ffffff;
+      @extend .border-success;
+      @extend .text-success;
+    }
+  }
+}
+.link-card {
+  .card-body {
+    padding: 16px;
+  }
+
+  .score-card {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px;
+    span {
+      font-size: 20px;
+      font-weight: bold;
+
+      &:last-child {
+        font-weight: normal;
+      }
+    }
+  }
+  .link-trash {
+    @extend .text-danger;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }
+
+  &:hover {
+    .link-trash {
+      opacity: 1;
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.linkTransition {
+  &-enter {
+    opacity: 0;
+  }
+  &-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+
+  &-exit {
+    opacity: 1;
+    position: absolute !important;
+    bottom: 0;
+  }
+  &-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }
+}
+
+.pageTransition {
+  &-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &-enter-active {
+    opacity: 1;
+    transition: opacity 250ms ease-in;
+  }
+}
