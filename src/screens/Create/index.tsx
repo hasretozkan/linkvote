@@ -48,7 +48,7 @@ const CreatePage: React.FC<CreatePageProps> = ({ showToast }) => {
 
         showToast("success", `${name} added`);
       } catch (err) {
-        showToast("error", err.message);
+        showToast("error", "Error");
       }
 
       setIsLoading(false);
